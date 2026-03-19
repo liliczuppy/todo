@@ -1,0 +1,100 @@
+@import "tailwindcss";@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+
+:root {
+  --bg-olive: #8e9686;
+  --paper: #fcfdfa;
+  --accent-green: #909d89;
+  --accent-pink: #dfafaa;
+  --accent-beige: #f1ede5;
+  --text-main: #4a4f46;
+}
+
+body {
+  background-color: var(--bg-olive);
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-main);
+}
+
+.font-handwriting {
+  font-family: 'Caveat', cursive;
+}
+
+.blob-title {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  background-color: var(--accent-green);
+}
+
+.blob-focus {
+  border-radius: 40px 10px 50px 20px/20px 40px 10px 50px;
+  background-color: var(--accent-beige);
+}
+
+.blob-btn {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+/* Füzetvonal stílus */
+.paper-line {
+  border-bottom: 2px solid #e8e9e4;
+  background: transparent;
+}
+
+/* Animációk */
+@keyframes drawIn {
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.task-enter { animation: drawIn 0.3s ease-out forwards; }
+
+.strike-through {
+  position: relative;
+}
+.strike-through::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--text-main);
+  transition: width 0.3s ease-out;
+  border-radius: 2px;
+}
+.completed .strike-through::after {
+  width: 100%;
+}
+
+.league-script-regular {
+  font-family: "League Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quote-brush-bg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; 
+  padding: 40px 100px;
+  
+  background-color: #f1e8dc;
+  
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 400'%3E%3Cfilter id='fat-brush'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.06' numOctaves='5' seed='8'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='50'/%3E%3C/filter%3E%3Crect x='100' y='110' width='1200' height='180' filter='url(%23fat-brush)'/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem;
+  margin-bottom: 0rem;
+  width: 100%;
+}
