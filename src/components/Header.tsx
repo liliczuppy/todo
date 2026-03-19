@@ -17,7 +17,7 @@ export default function Header({
       <div className="flex justify-end w-full margin-bottom-0">
         <div className="blob-title inline-block px-8 py-3 transform -rotate-2 mb-2 shadow-sm">
           <h1 className="font-handwriting text-white text-5xl tracking-wide">
-            To-do list
+            To-do lista
           </h1>
         </div>
       </div>

@@ -21,7 +21,6 @@ export default function App() {
   const [editText, setEditText] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
-  const [mainFocus, setMainFocus] = useState("");
   const [deleteModal, setDeleteModal] = useState({
     isOpen: false,
     taskId: null as string | null,
@@ -33,7 +32,6 @@ export default function App() {
       try {
         const parsed = JSON.parse(savedData);
         setTasks(parsed.tasks || []);
-        setMainFocus(parsed.mainFocus || "");
       } catch (e) {
         console.error(e);
       }
@@ -47,11 +45,10 @@ export default function App() {
         "bujo-tasks-v3",
         JSON.stringify({
           tasks: tasks.filter((t) => !t.isExiting),
-          mainFocus,
         }),
       );
     }
-  }, [tasks, mainFocus, isLoaded]);
+  }, [tasks, isLoaded]);
 
   const addTask = (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,7 +59,12 @@ export default function App() {
       completed: false,
       isNew: true,
     };
-    setTasks((prev) => [...prev, newTask]);
+    setTasks((prev) => {
+      const activeTasks = prev.filter((t) => !t.completed);
+      const completedTasks = prev.filter((t) => t.completed);
+
+      return [...activeTasks, newTask, ...completedTasks];
+    });
     setNewTaskText("");
     setTimeout(
       () =>
