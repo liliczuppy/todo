@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+# Bullet Journal To-Do Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ez egy modern, reszponzív teendőkezelő alkalmazás, amely letisztult, "bullet journal" stílusú megjelenéssel segíti a napi feladatok rendszerezését.
 
-Currently, two official plugins are available:
+## 🚀 Futtatás helyi környezetben
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A projekt elindításához kövesse az alábbi lépéseket:
 
-## React Compiler
+1. **Tárhely klónozása:**
+   ```bash
+   git clone [repository-url]
+   cd todo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+   fejlesztői szerver indítása:
 
-## Expanding the ESLint configuration
+2.  **Fejlesztői szerver indítása:**
+    
+    Bash
+    
+    ```
+    npm run dev
+    
+    ```
+    
+3.  **Megtekintés:** Nyissa meg a böngészőben a [http://localhost:5173](https://www.google.com/search?q=http://localhost:5173) címet.
+    
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠 Felhasznált technológiák
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Az alkalmazás fejlesztése során a modern webfejlesztés iparági sztenderdjeit alkalmaztam:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+-   React 19: A felhasználói felület deklaratív felépítéséhez.
+  
+-   TypeScript: A kód robusztusságának és a fejlesztői élmény növelésének érdekében.
+    
+-   Vite: Mint villámgyors build eszköz és fejlesztői szerver.
+    
+-   Tailwind CSS 4: A modern, utility-first stílusozáshoz.
+    
+-   Framer Motion: A sima animációkért és a "kifestő" stílusú idézetmegjelenítésért.
+    
+-   Lucide React: Ikonkészlet a feladatkezelő gombokhoz.
+    
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧠 Kihívások és megoldások
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+A fejlesztési folyamat során felmerült problémák és az azokra adott válaszaim:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Animációk szinkronizálása:** A feladatok törlésekor és állapotváltozásakor (pipálás) trükkös volt megoldani, hogy az animációk lefussanak, mielőtt a komponens kikerül a DOM-ból vagy áthelyeződik a listában. Ezt végül `setTimeout` és állapotjelzők (pl. `isExiting`) segítségével sikerült áthidalni.
+- **Drag and Drop logika:** Drag and Drop integrálása a React állapotkezelésével (useState) igényelt némi finomhangolást, hogy a lista sorrendje megbízhatóan frissüljön.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **SVG Mask Images kezelése:** Az egyedi vizuális elemek, pontosabban az `mask-image` tulajdonság és az SVG-k kombinálása, a helyes megjelenítése (például a "papír" hatás elérése) jelentős finomhangolást igényelt a CSS-ben.
+
+## 📈 Továbblépési lehetőségek (Roadmap)
+
+Amennyiben több idő állna rendelkezésemre, az alábbi fejlesztésekkel folytatnám a projektet:
+
+-   **Backend integráció:** Node.js/Express vagy Firebase használata a feladatok felhő alapú tárolásához és szinkronizációjához.
+    
+-   **Kategóriák és Határidők:** Bővített adatmodell a feladatok csoportosítására és határidők kezelésére (DatePicker integráció).
+    
+-   **Sötét mód vagy egyéb stílusok:** A különböző felhaszálói igények kielégítésére.
+    
+
+----------
+
+**Készítette:** Czuppon-Horváth Lili
