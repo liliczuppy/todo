@@ -53,11 +53,14 @@ A fejlesztés során az alábbi területek igényeltek külön figyelmet:
 - Drag and drop logika: a lista sorrendjének frissítéséhez össze kellett hangolni a húzd-és-ejtsd működést a React állapotkezelésével.
 - Vizuális részletek: a papírhatás, az SVG-alapú stíluselemek és a kézírásos megjelenés finomhangolást igényelt.
 
-## Továbblépési lehetőségek
+## 📈 Továbblépési lehetőségek (Roadmap)
 
-Ha tovább fejlődne a projekt, ezek jó következő lépések lehetnének:
+Amennyiben több idő állna rendelkezésemre, az alábbi fejlesztésekkel folytatnám a projektet:
 
-- kategóriák és határidők bevezetése
-- szűrés aktív / kész feladatok szerint
-- sötét mód vagy több téma
-- backend alapú adattárolás
+- **Backend integráció:** Node.js/Express vagy Firebase használata a feladatok felhő alapú tárolásához és szinkronizációjához.
+- **Kategóriák és Határidők:** Bővített adatmodell a feladatok csoportosítására és határidők kezelésére (DatePicker integráció).
+- **Sötét mód vagy egyéb stílusok:** A különböző felhaszálói igények kielégítésére.
+
+---
+
+**Készítette:** Czuppon-Horváth Lili
