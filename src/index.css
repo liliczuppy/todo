@@ -68,22 +68,50 @@ body {
   font-style: normal;
 }
 
-.quote-brush-bg {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px; 
-  padding: 40px 100px;
-  background-color: #f1e8dc;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 400'%3E%3Cfilter id='fat-brush'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.06' numOctaves='5' seed='8'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='50'/%3E%3C/filter%3E%3Crect x='100' y='110' width='1200' height='180' filter='url(%23fat-brush)'/%3E%3C/svg%3E");
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-}
-
 .quote-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 20px; 
+}
+
+.quote-brush-bg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 95%; 
+  margin: 0 auto;
+  min-height: 140px; 
+  padding: 20px 40px;
+  background-color: #f1e8dc;
+  
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='fat-brush'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08 0.3' numOctaves='8' seed='22'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='15'/%3E%3C/filter%3E%3Crect x='5' y='5' width='90' height='90' filter='url(%23fat-brush)'/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  
+  /* Safari támogatás */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='fat-brush'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08 0.3' numOctaves='8' seed='22'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='15'/%3E%3C/filter%3E%3Crect x='5' y='5' width='90' height='90' filter='url(%23fat-brush)'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+}
+@media (min-width: 768px) {
+  .quote-brush-bg {
+    max-width: 700px; 
+    min-height: 120px;
+    padding: 30px 60px;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d8d3c9;
+  border-radius: 10px;
 }

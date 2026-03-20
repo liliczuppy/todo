@@ -28,7 +28,7 @@ function TaskList({
   const visibleTasks = tasks.filter((t) => !t.isExiting);
 
   return (
-    <div className="space-y-1 min-h-[400px]">
+    <div className="space-y-1 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
       {visibleTasks.map((task, index) => (
         <TaskItem
           key={task.id}

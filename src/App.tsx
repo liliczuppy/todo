@@ -5,6 +5,7 @@ import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
 import DeleteModal from "./components/DeleteModal";
 import Quote from "./components/Quote";
+import Footer from "./components/Footer";
 
 interface Task {
   id: string;
@@ -177,6 +178,7 @@ export default function App() {
             />
           </div>
         </div>
+        <Footer />
       </div>
 
       <DeleteModal
