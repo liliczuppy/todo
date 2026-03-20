@@ -103,9 +103,9 @@ function TaskList({
             <motion.div
               layout
               key={`empty-left-${i}`}
-              className="h-[46px] w-full paper-line flex items-center px-1 opacity-30"
+              className="h-[46px] w-full flex items-center px-1 opacity-50 border-b-2 border-[#d8d1c3]"
             >
-              <div className="w-4 h-4 rounded-full border-2 border-[#d8d3c9] ml-0.5"></div>
+              <div className="w-4 h-4 rounded-full border-2 border-[#c5bcae] ml-0.5"></div>
             </motion.div>
           ))}
         </div>
@@ -162,9 +162,9 @@ function TaskList({
             <motion.div
               layout
               key={`empty-right-${i}`}
-              className="hidden lg:flex h-[46px] w-full paper-line items-center px-1 opacity-30"
+              className="hidden lg:flex h-[46px] w-full items-center px-1 opacity-50 border-b-2 border-[#d8d1c3]"
             >
-              <div className="w-4 h-4 rounded-full border-2 border-[#d8d3c9] ml-0.5"></div>
+              <div className="w-4 h-4 rounded-full border-2 border-[#c5bcae] ml-0.5"></div>
             </motion.div>
           ))}
         </div>
