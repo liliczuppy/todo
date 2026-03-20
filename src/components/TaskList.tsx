@@ -30,8 +30,8 @@ function TaskList({
 }: TaskListProps) {
   const visibleTasks = tasks.filter((t) => !t.isExiting);
 
-  let leftCapacity = 14;
-  if (visibleTasks.length > 28) {
+  let leftCapacity = 6;
+  if (visibleTasks.length > 12) {
     leftCapacity = Math.ceil(visibleTasks.length / 2);
   }
 
@@ -40,8 +40,8 @@ function TaskList({
   const rightTasks = visibleTasks.slice(leftCapacity);
 
   // Szükséges üres vonalak kiszámítása mindkét oszlopra
-  const leftEmptyCount = Math.max(0, 14 - leftTasks.length);
-  const rightEmptyCount = Math.max(0, 14 - rightTasks.length);
+  const leftEmptyCount = Math.max(0, 6 - leftTasks.length);
+  const rightEmptyCount = Math.max(0, 6 - rightTasks.length);
 
   return (
     <div className="flex-1 lg:overflow-y-auto pr-2 pb-4 lg:custom-scrollbar lg:min-h-0">
