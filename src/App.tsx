@@ -166,6 +166,7 @@ export default function App() {
 
             <TaskList
               tasks={tasks}
+              setTasks={setTasks}
               editingId={editingId}
               editText={editText}
               setEditText={setEditText}
