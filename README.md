@@ -54,14 +54,7 @@ A fejlesztési folyamat során felmerült problémák és az azokra adott válas
 ## 📈 Továbblépési lehetőségek (Roadmap)
 
 Amennyiben több idő állna rendelkezésemre, az alábbi fejlesztésekkel folytatnám a projektet:
-
--   **Backend integráció:** Node.js/Express vagy Firebase használata a feladatok felhő alapú tárolásához és szinkronizációjához.
     
 -   **Kategóriák és Határidők:** Bővített adatmodell a feladatok csoportosítására és határidők kezelésére (DatePicker integráció).
     
 -   **Sötét mód vagy egyéb stílusok:** A különböző felhaszálói igények kielégítésére.
-    
-
-----------
-
-**Készítette:** Czuppon-Horváth Lili
