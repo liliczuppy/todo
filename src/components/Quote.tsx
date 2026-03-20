@@ -34,11 +34,10 @@ export default function Quote() {
     <div className="quote-container w-full py-8 overflow-hidden">
       <div className="quote-brush-bg">
         <motion.h2
-          // A text-xl mobilon, text-2xl asztalin segít a jobb illeszkedésben
           className="font-handwriting text-xl md:text-2xl italic text-[#ba6c54] text-center flex flex-wrap justify-center gap-x-1.5 md:gap-x-2 leading-relaxed"
           variants={container}
           initial="hidden"
-          whileInView="visible" // Csak akkor indul, ha láthatóvá válik
+          whileInView="visible"
           viewport={{ once: true }}
         >
           {words.map((word, index) => (

@@ -43,14 +43,11 @@ function TaskList({
             <Reorder.Item
               key={task.id}
               value={task}
-              // A 'layout' prop felelős azért, hogy ha változik a sorrend (pl. kipipálásnál),
-              // az elem ne ugorjon, hanem simán átússzon az új helyére.
               layout
               initial={{ opacity: 0, y: 10 }}
               animate={{
                 opacity: 1,
                 y: 0,
-                // Kicsit halványabb lehet, ha kész van
                 backgroundColor: task.isCompleted
                   ? "rgba(240, 240, 240, 0.5)"
                   : "rgba(255, 255, 255, 1)",
@@ -61,12 +58,11 @@ function TaskList({
                 boxShadow: "0px 8px 20px rgba(0,0,0,0.15)",
                 zIndex: 10,
               }}
-              // Rugalmas (spring) átmenet a "lecsúszáshoz"
               transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 30,
-                layout: { duration: 0.4 }, // Itt állíthatod a lecsúszás sebességét
+                layout: { duration: 0.4 },
               }}
             >
               <TaskItem
