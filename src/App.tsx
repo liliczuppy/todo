@@ -54,7 +54,7 @@ export default function App() {
   const addTask = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newTaskText.trim()) return;
-    const newTask = {
+    const newTask: Task = {
       id: crypto.randomUUID(),
       text: newTaskText.trim(),
       completed: false,
@@ -143,26 +143,35 @@ export default function App() {
     totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
 
   return (
-    <div className="min-h-screen py-8 px-4 flex justify-center items-start ">
-      <div className="bg-[#fcfdfa] w-full max-w-3xl rounded-sm shadow-xl p-6 sm:p-10 relative overflow-hidden">
-        <div className="flex flex-col space-y-0 relative z-10">
-          <Header
-            progress={progress}
-            completedTasks={completedTasks}
-            totalTasks={totalTasks}
-          />
-          <Quote />
-
-          <div className="space-y-6">
-            <h2 className="font-handwriting text-3xl drop-shadow-sm text-[#4a4f46]">
-              Feladatok
-            </h2>
-
-            <TaskInput
-              newTaskText={newTaskText}
-              setNewTaskText={setNewTaskText}
-              addTask={addTask}
+    <div className="min-h-screen lg:h-screen w-full px-2 sm:px-4 flex justify-center items-start lg:items-center lg:overflow-hidden">
+      <div className="bg-[#fcfdfa] w-full max-w-3xl lg:max-w-6xl lg:w-[1200px] min-h-[95vh] lg:h-[95vh] my-4 lg:my-0 rounded-sm shadow-xl p-4 sm:p-6 lg:py-6 lg:px-10 relative flex flex-col lg:overflow-hidden transition-all duration-300">
+        <div className="flex flex-col h-full relative z-10 lg:overflow-hidden">
+          <div className="flex-shrink-0">
+            <Header
+              progress={progress}
+              completedTasks={completedTasks}
+              totalTasks={totalTasks}
             />
+            <div className="-mt-2 lg:-mt-6 mb-1 lg:mb-2">
+              <Quote />
+            </div>
+          </div>
+
+          <div className="flex-1 flex flex-col lg:min-h-0 lg:overflow-hidden relative">
+            {/* Cím és Input. Mobilon a képernyő tetejére tapad, háttere takarja az alatta görgő listát */}
+            <div className="sticky top-0 z-50 bg-[#fcfdfa] pt-4 pb-3 -mt-4 -mx-4 px-4 sm:-mt-6 sm:pt-6 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 lg:pt-0 lg:pb-0 lg:mt-0 shadow-sm lg:shadow-none transition-all">
+              <h2 className="font-handwriting text-2xl lg:text-3xl drop-shadow-sm text-[#4a4f46] mb-1 lg:mb-2 flex-shrink-0">
+                Feladatok
+              </h2>
+
+              <div className="flex-shrink-0 mb-1 lg:mb-2">
+                <TaskInput
+                  newTaskText={newTaskText}
+                  setNewTaskText={setNewTaskText}
+                  addTask={addTask}
+                />
+              </div>
+            </div>
 
             <TaskList
               tasks={tasks}
@@ -179,7 +188,9 @@ export default function App() {
             />
           </div>
         </div>
-        <Footer />
+        <div className="flex-shrink-0 mt-3 lg:mt-3 relative z-40 bg-[#fcfdfa]">
+          <Footer />
+        </div>
       </div>
 
       <DeleteModal

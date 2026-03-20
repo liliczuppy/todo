@@ -31,10 +31,10 @@ export default function Quote() {
   };
 
   return (
-    <div className="quote-container w-full py-8 overflow-hidden">
+    <div className="w-full py-1 lg:py-2 overflow-hidden flex justify-center items-center">
       <div className="quote-brush-bg">
         <motion.h2
-          className="font-handwriting text-xl md:text-2xl italic text-[#ba6c54] text-center flex flex-wrap justify-center gap-x-1.5 md:gap-x-2 leading-relaxed"
+          className="font-handwriting text-lg md:text-xl italic text-[#ba6c54] text-center flex flex-wrap justify-center gap-x-1.5 md:gap-x-2 leading-relaxed"
           variants={container}
           initial="hidden"
           whileInView="visible"

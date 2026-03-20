@@ -81,11 +81,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   width: 95%; 
   margin: 0 auto;
-  min-height: 140px; 
-  padding: 20px 40px;
+  min-height: 8px; 
+  padding: 15px 30px;
   background-color: #f1e8dc;
   
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='fat-brush'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08 0.3' numOctaves='8' seed='22'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='15'/%3E%3C/filter%3E%3Crect x='5' y='5' width='90' height='90' filter='url(%23fat-brush)'/%3E%3C/svg%3E");
