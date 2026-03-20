@@ -28,7 +28,7 @@ export default function App() {
   });
 
   useEffect(() => {
-    const savedData = localStorage.getItem("bujo-tasks-v3");
+    const savedData = localStorage.getItem("bujo-tasks");
     if (savedData) {
       try {
         const parsed = JSON.parse(savedData);
@@ -43,7 +43,7 @@ export default function App() {
   useEffect(() => {
     if (isLoaded) {
       localStorage.setItem(
-        "bujo-tasks-v3",
+        "bujo-tasks",
         JSON.stringify({
           tasks: tasks.filter((t) => !t.isExiting),
         }),
