@@ -44,8 +44,12 @@ export default function TaskItem({
     >
       {/* Checkbox (Animált és kitöltött zöld, ha kész) */}
       <button
+        type="button"
         onClick={() => toggleTask(task.id)}
-        className={`flex-shrink-0 focus:outline-none w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
+        aria-label={
+          task.completed ? "Feladat visszajelölése" : "Feladat teljesítve"
+        }
+        className={`flex-shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7a8873]/60 ${
           task.completed
             ? "border-[#7a8873] bg-[#7a8873] scale-110"
             : "border-[#909d89] bg-white hover:border-[#7a8873]"
@@ -71,14 +75,16 @@ export default function TaskItem({
               onChange={(e) => setEditText(e.target.value)}
               onBlur={() => saveEdit(task.id)}
               onKeyDown={(e) => e.key === "Enter" && saveEdit(task.id)}
-              className="w-full bg-[#f1ede5]/70 outline-none px-2 py-1 font-medium text-base rounded text-[#4a4f46]"
+              className="w-full bg-[#f1ede5]/70 px-2 py-1 font-medium text-base rounded text-[#4a4f46] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#909d89]/60"
             />
             <button
+              type="button"
               onMouseDown={(e) => {
                 e.preventDefault();
                 saveEdit(task.id);
               }}
-              className="text-[#909d89] hover:text-[#7a8873]"
+              aria-label="Szerkesztés mentése"
+              className="text-[#909d89] hover:text-[#7a8873] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7a8873]/60 rounded-sm"
             >
               <Check size={20} />
             </button>
@@ -99,23 +105,29 @@ export default function TaskItem({
 
       {/* Akciók - Szerkesztés, Fogás, Törlés */}
       {editingId !== task.id && (
-        <div className="flex items-center gap-1 sm:gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="flex items-center gap-1 sm:gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100 transition-opacity">
           <button
+            type="button"
             onClick={() => startEditing(task)}
-            className="text-[#a9b0a4] hover:text-[#ba6c54] p-1"
+            aria-label="Feladat szerkesztése"
+            className="text-[#a9b0a4] hover:text-[#ba6c54] p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ba6c54]/50 rounded-sm"
             title="Szerkesztés"
           >
             <Edit2 size={16} />
           </button>
           <button
-            className="cursor-grab text-[#a9b0a4] hover:text-[#4a4f46] p-1 hidden sm:block"
+            type="button"
+            aria-label="Feladat áthelyezése húzással"
+            className="cursor-grab text-[#a9b0a4] hover:text-[#4a4f46] p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4a4f46]/30 rounded-sm"
             title="Áthelyezés"
           >
             <GripVertical size={16} />
           </button>
           <button
+            type="button"
             onClick={() => requestDelete(task.id)}
-            className="text-[#dfafaa] hover:text-[#ba6c54] p-1"
+            aria-label="Feladat törlése"
+            className="text-[#dfafaa] hover:text-[#ba6c54] p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ba6c54]/50 rounded-sm"
             title="Törlés"
           >
             <Trash2 size={16} />

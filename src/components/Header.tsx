@@ -23,7 +23,7 @@ export default function Header({
       </div>
 
       {/* Haladás / Progress */}
-      <div className="pt-1">
+      <div className="pt-">
         <h2 className="font-handwriting text-2xl text-[#ba6c54] bg-[#f1ede5] inline-block px-3 py-1 rounded-sm transform rotate-1 mb-4 shadow-sm">
           Haladás
         </h2>

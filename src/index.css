@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=League+Script&family=Nunito:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -84,8 +85,8 @@ body {
 
   width: 95%; 
   margin: 0 auto;
-  min-height: 8px; 
-  padding: 15px 30px;
+  min-height: 0;
+  padding: 10px 24px;
   background-color: #f1e8dc;
   
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='fat-brush'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08 0.3' numOctaves='8' seed='22'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='15'/%3E%3C/filter%3E%3Crect x='5' y='5' width='90' height='90' filter='url(%23fat-brush)'/%3E%3C/svg%3E");
@@ -99,9 +100,9 @@ body {
 }
 @media (min-width: 768px) {
   .quote-brush-bg {
-    max-width: 700px; 
-    min-height: 120px;
-    padding: 30px 60px;
+    max-width: 700px;
+    min-height: 92px;
+    padding: 18px 48px;
   }
 }
 
